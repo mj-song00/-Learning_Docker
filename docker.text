@@ -100,5 +100,18 @@ sudo docker ps -a -> 멈춘 것도 보여줌
 sudo docker ps  -> 실행중인 도커 상태 보여줌
 
 sudo docker exec [options] {container_id|container_name} [command]
+-> 어떤 container에 어떤 command를 날릴건지 
 
+sudo docker exec -ti {container_id|container_name} sh
+-> 도커 쉘 진입
 
+docker exec -i : interactive 옵션 쉘 스크립트로 쓸때 따로 받지않고 localhost에서 친걸
+                  container에서도 쓰겠다.
+
+            -t : -tty옵션. 터미널 환경을 만들어서 쉘 스크립트를 만들때 사용할
+
+도커 삭제
+sudo docker rm container_id
+
+더 많은 명령어
+https://docs.docker.com/engine/reference/commandline/cli/
