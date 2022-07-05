@@ -115,3 +115,18 @@ sudo docker rm container_id
 
 더 많은 명령어
 https://docs.docker.com/engine/reference/commandline/cli/
+
+도커 이미지 만들기 위해 -> 도커 파일 필요
+
+FROM python:3.9 -> 이미지를 만들때 어떤 이미지부터 생성할지 결정 여기선 파이선3.9가 실행할 수 있는 환경이 세팅되어저 있는 이미지를 사용해서 docker이미지를 만들겠음!
+
+ADD requirements.txt . -> 호스트 머신에 있는 파일을 도커 이미지를 '.' 위치에  넣겠음
+
+RUN pip install - r requirements.txt -> 쉘에서 run 커멘드를 실행해서 환경을 만들겠뜸!
+
+ADD app.py . -> 호스트 머신에 있는 파일을 도커 이미지를 '.' 위치에  넣겠음
+
+ADD templates ./templates/ -> 호스트 머신에 있는 폴더를 .//폴더로 옮기겠음!
+
+CMD ["python", "app.py"] -> 이미지에 어떤 명령어가 기본으로 실행될 것인지 정의, 커멘드가 없이 실행되면 python app.py가 실행됨
+
